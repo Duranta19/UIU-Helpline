@@ -15,25 +15,12 @@ include "components/header.php";
             <p style="padding: 8px 10px; font-size:20px"><b>User Name</b></p>
         </div>
         <div class="card-body">
-            <h5 class="card-title"><a href="">Post Title</a></h5>
+            <h5 class="card-title"><a href="post_details.php">Post Title</a></h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis aliquid nemo nobis expedita sapiente nostrum iusto libero quae quia officiis accusantium aperiam dicta illo unde, aspernatur molestiae? Tempora, itaque.</p>
         </div>
     </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <?php
 include "components/footer.php";
 ?>

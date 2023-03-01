@@ -14,14 +14,8 @@
             background-color: rgb(28, 56, 56);
         }
 
-        footer {
-            width: 100%;
-            display: block;
-            position: static;
-        }
+        footer p {
 
-        footer div p {
-            margin-top: -22px;
         }
 
         a {
@@ -29,6 +23,12 @@
             text-decoration: underline;
         }
 
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #15252B;
+            color: white;
+        }
     </style>
 </head>
 

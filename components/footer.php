@@ -1,11 +1,8 @@
 
     <footer>
-        <div style="background-color: #15252B;">
             <p style="text-align: center; color: white;"><b>UIU Helpline</b></p>
             <p style="text-align: center; color: white;">www.uiuhelpline.com</p>
             <p style="text-align: center; color: white;">© ALL RIGHTS RESERVE BY TEAM VOID</p>
-
-        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
