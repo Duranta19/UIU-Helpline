@@ -29,7 +29,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 50%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -40,7 +45,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 60%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -51,7 +61,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 70%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -62,19 +77,31 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 10%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row my-4">
         <div class="col-md-3">
             <div class="card">
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Course Title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -85,7 +112,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -96,7 +128,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -107,7 +144,12 @@ include('components/header.php');
                 <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <label for="progress-bar">Difficulty Level</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>

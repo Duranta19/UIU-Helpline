@@ -14,9 +14,6 @@
             background-color: rgb(28, 56, 56);
         }
 
-        footer p {
-
-        }
 
         a {
             color: #141619;
