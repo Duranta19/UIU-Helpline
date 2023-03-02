@@ -6,7 +6,7 @@ include('components/header.php');
 <div class="container text-center">
     <h4>Course Review</h4>
     <h5> 43 Courses 1053 Reviews</h5>
-    <button type="button" class="btn" style="background-color: #15252B; color:white; border-radius:25px;">Primary</button>
+    <a href ="addNewCourse.php" class="btn" style="background-color: #15252B; color:white; border-radius:25px;">Add Course</a>
 </div>
 <hr>
 <!-- pagination -->
@@ -24,137 +24,30 @@ include('components/header.php');
 
 <div class="container">
     <div class="row">
+        <?php
+        include('components/dbConnect.php');
+        $sql2 = "SELECT * FROM `course_details` WHERE 1 ORDER BY course_code;";
+        $result2 = mysqli_query($conn,$sql2);
+        while($row = mysqli_fetch_assoc($result2)){
+        ?>
         <div class="col-md-3">
             <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
+                <img src="img/<?php echo $row['img'];?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title"><?php echo $row['course_title'];?></h5>
                     <label for="progress-bar">Difficulty Level</label>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 50%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><?php echo substr($row['course_des'], 0, 50) . '...';?></p>
+                    <a href="course_des.php" class="btn" style="background-color:#15252B; color:white">Details</a>
+                    <p class="card-text"><small class="text-muted"><?php echo $row['prerequisite'];?></small></p>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 60%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 70%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 10%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
+        <?php } ?>
     </div>
 
-    <div class="row my-4">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Course Title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://lnsel.com/wp-content/uploads/2021/05/web-development-companies-scaled.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="http://" class="btn" style="background-color:#15252B; color:white">Details</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <?php
 include('components/footer.php');

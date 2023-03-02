@@ -50,7 +50,7 @@
                             <a class="nav-link hov" href="#" style="color: white;">Community</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Course Review</a>
+                            <a class="nav-link hov" href="courses.php" style="color: white;">Course Review</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="#" style="color: white;">Question Bank</a>
