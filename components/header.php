@@ -14,9 +14,6 @@
             background-color: rgb(28, 56, 56);
         }
 
-        footer p {
-
-        }
 
         a {
             color: #141619;
@@ -50,7 +47,7 @@
                             <a class="nav-link active hov" aria-current="page" href="#" style="color: white;">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Community</a>
+                            <a class="nav-link hov" href="community.php" style="color: white;">Community</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="#" style="color: white;">Course Review</a>
@@ -65,9 +62,9 @@
                             <a class="nav-link hov" href="#" style="color: white;">Q/A</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="background: transparent; color: white;">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex" role="search" method="GET" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+                        <input class="form-control me-2" type="search" name="search_key" placeholder="Search" aria-label="Search" style="background: transparent; color: white;">
+                        <button  class="btn btn-outline-success" name="search" type="submit">Search</button>
                     </form>
                 </div>
             </div>
