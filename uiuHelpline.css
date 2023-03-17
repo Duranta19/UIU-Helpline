@@ -12,6 +12,8 @@ body{
     height: 300px;
     text-align: center;
     color: rgb(246, 255, 222);
+    width: 100%;
+    
 }
 .cover img{
     height: 50px;
@@ -68,6 +70,7 @@ body{
 }
 .feature2 .item{
     margin-right: 150px;
+    float: right;
 }
 .feature2{
     background-color: #15252b10;
@@ -78,8 +81,9 @@ body{
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 30%;
+    border-radius: 20px;
     text-decoration: none;
+
 }
 .features .item a:hover{
     background-color: #15252b6f;
