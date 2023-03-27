@@ -1,5 +1,6 @@
 <?php
 $post_by = '1';
+$search_flag = false;
 if(isset($_POST['post'])){
     include('components/dbConnect.php');
     $post_title = $_POST['post_title'];
@@ -15,6 +16,7 @@ if(isset($_POST['post'])){
 if(isset($_GET['search'])){
     $key = $_GET['search_key'];
     // echo $key;
+    $search_flag = true;
 }
 ?>
 <?php
@@ -47,6 +49,7 @@ include "components/header.php";
 <!-- view post -->
 <div class="container">
     <?php
+    if($search_flag == false){
     include('components/dbConnect.php');
     $sql2 = "SELECT * FROM `community_post` WHERE 1 ORDER by date DESC;";
     $result2 = mysqli_query($conn, $sql2);
@@ -61,7 +64,23 @@ include "components/header.php";
             <p class="card-text"><?php echo $row['post_details'];?></p>
         </div>
     </div>
-    <?php } ?>
+    <?php }}
+    else{
+        include('components/dbConnect.php');
+        $sql2 = "SELECT * FROM `community_post` WHERE community_post.post_title like '%$key%' or community_post.post_details like '%$key%';";
+        $result2 = mysqli_query($conn, $sql2);
+        while($row = mysqli_fetch_assoc($result2)) { ?>
+        <div class="card w-75 m-auto my-3">
+            <div class="card-header" style="display:inline-flex">
+                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+                <p style="padding: 8px 10px; font-size:20px"><b>User Name</b></p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><a href="post_details.php?post_id=<?php echo $row['id'];?>"><?php echo $row['post_title'];?></a></h5>
+                <p class="card-text"><?php echo $row['post_details'];?></p>
+            </div>
+        </div>
+        <?php }} ?>
 </div>
 
 <?php
