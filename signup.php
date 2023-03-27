@@ -15,7 +15,7 @@ if (isset($_POST['signup'])) {
     $sql = "INSERT INTO `accounts` (`name`, `username`, `password`, `c_password`, `photo_loc`) VALUES ('$name', '$username', '$pass ', '$cpass ', '$pic_name')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-      $showAlret = true;
+      move_uploaded_file($pic_loc, $upload_loc);
     }
   } else {
     $showError = 'password do not match';
