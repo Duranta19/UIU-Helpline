@@ -1,0 +1,55 @@
+.box {
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    background-color: rgb(226, 227, 229);
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin: 50px;
+    display: flex;
+}
+
+.button {
+    display: flex;
+    margin-left: 700px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-button {
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(7, 52, 43);
+    color: white;
+    size: 40px;
+    border-radius: 20px;
+}
+
+
+.Course-info h1{
+    font-size: 30px;
+}
+
+.pagination {
+    margin-top: 300px;
+    margin: 50px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+li a:hover:not(.active) {
+    background-color: #121f19;
+  }
+
+  .active{
+    background-color: rgb(27, 24, 24)
+}
