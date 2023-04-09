@@ -58,14 +58,14 @@ include "components/header.php";
     <div class="row">
         <?php
             include('components/dbConnect.php');
-            $sql3 = "SELECT `id`, `comment`, `comment_by`, `post_id`, `date` FROM `post_comment` WHERE `post_id` = '$post_id'";
+            $sql3 = "SELECT `id`,`name`, `comment`, `comment_by`, `post_id`, `date` FROM `post_comment` INNER JOIN accounts on accounts.userid = post_comment.comment_by WHERE `post_id` = '$post_id'";
             $result3 = mysqli_query($conn,$sql3);
             while($row = mysqli_fetch_assoc($result3)){
         ?>
         <div class="card mt-2">
             <div class="card-header" style="display:inline-flex; height:55px">
                 <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:30px; height:30px; border-radius:50%; margin-top:2px">
-                <p style="padding: 8px 10px; font-size:16px"><b>User Name</b></p>
+                <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">

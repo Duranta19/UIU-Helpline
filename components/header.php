@@ -37,14 +37,14 @@
                 <a class="navbar-brand" href="#">
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/1200px-United_International_University_Monogram.svg.png" alt="" width="35" height="30">
                 </a>
-                <a class="navbar-brand" href="#" style="color: white;"><b>UIU Helpline</b></a>
+                <a class="navbar-brand" href="dashboard.php" style="color: white;"><b>UIU Helpline</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="https://www.svgrepo.com/show/51813/menu.svg" alt="" height="30" width="20">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active hov" aria-current="page" href="#" style="color: white;">Home</a>
+                            <a class="nav-link active hov" aria-current="page" href="dashboard.php" style="color: white;">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="community.php" style="color: white;">Community</a>
@@ -53,7 +53,7 @@
                             <a class="nav-link hov" href="#" style="color: white;">Course Review</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Question Bank</a>
+                            <a class="nav-link hov" href="questionBankList.php" style="color: white;">Question Bank</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="#" style="color: white;">Books</a>
