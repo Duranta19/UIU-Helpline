@@ -23,7 +23,7 @@ include('components/header.php');
 </div>
 <hr>
 <!-- pagination -->
-<nav aria-label="Page navigation example mx-3">
+<!-- <nav aria-label="Page navigation example mx-3">
     <ul class="pagination mx-3">
         <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">Previous</a></li>
         <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">1</a></li>
@@ -31,7 +31,7 @@ include('components/header.php');
         <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">3</a></li>
         <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">Next</a></li>
     </ul>
-</nav>
+</nav> -->
 
 <!-- course card -->
 
