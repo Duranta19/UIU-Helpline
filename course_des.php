@@ -1,8 +1,11 @@
 <?php
 include('components/dbConnect.php');
 $c_id = $_GET['course_id'];
+$page = $_GET['page'];
 $userId = "1";
 
+$p = ((int)$page - 1)*3;
+// echo $p;
 $sql = "SELECT * FROM `course_details` WHERE id = '$c_id';";
 $result = mysqli_query($conn, $sql);
 
@@ -35,7 +38,7 @@ include('components/header.php');
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <form action="course_des.php?course_id=<?php echo $c_id;?>" method="post">
+            <form action="course_des.php?course_id=<?php echo $c_id; ?>" method="post">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #15252B; color: white;">
                     Write a review
@@ -106,7 +109,32 @@ include('components/header.php');
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <?php
+        include('components/dbConnect.php');
+        $sql3 = "SELECT * FROM `course_review` INNER JOIN accounts on course_review.user_id = accounts.userid WHERE course_id = '$c_id' LIMIT $p,3 ;";
+        $result3 = mysqli_query($conn, $sql3);
+
+        while ($row = mysqli_fetch_assoc($result3)) { ?>
+            <div class="col-md-4">
+                <div class="card  shadow p-3 mb-5 bg-body rounded">
+                    <div class="card-title" style="display:inline-flex">
+                        <img src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="" style="height: 50px; width:50px; border-radius:50%">
+                        <h3><?php echo $row['name']; ?></h3>
+                    </div>
+                    <div class="card-body">
+                        <h5><?php echo $row['date']; ?></h5>
+                        <label for="progress-bar">Difficulty Level</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php $l = (int)$row['difficulty_level'] * 20;
+                                                                                                                    echo $l; ?>%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h5 class="card-title">Review</h5>
+                        <p class="card-text"><?php echo $row['review']; ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <!-- <div class="col-md-4">
             <div class="card  shadow p-3 mb-5 bg-body rounded">
                 <div class="card-title" style="display:inline-flex">
                     <img src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="" style="height: 50px; width:50px; border-radius:50%">
@@ -140,36 +168,27 @@ include('components/header.php');
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nostrum cum recusandae iusto aliquid unde culpa optio voluptatibus dolorum at illo, quaerat vitae amet, nulla laborum. Beatae sed et, porro pariatur facilis quis laudantium nemo quaerat! Animi eum nemo ipsum voluptatibus cum consectetur obcaecati dignissimos, placeat illo ex voluptatum repellendus!</p>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card  shadow p-3 mb-5 bg-body rounded">
-                <div class="card-title" style="display:inline-flex">
-                    <img src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="" style="height: 50px; width:50px; border-radius:50%">
-                    <h3>User name</h3>
-                </div>
-                <div class="card-body">
-                    <h5>Date</h5>
-                    <label for="progress-bar">Difficulty Level</label>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h5 class="card-title">Review</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nostrum cum recusandae iusto aliquid unde culpa optio voluptatibus dolorum at illo, quaerat vitae amet, nulla laborum. Beatae sed et, porro pariatur facilis quis laudantium nemo quaerat! Animi eum nemo ipsum voluptatibus cum consectetur obcaecati dignissimos, placeat illo ex voluptatum repellendus!</p>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div>
     <nav aria-label="Page navigation example">
+
         <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">1</a></li>
-            <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">2</a></li>
-            <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">3</a></li>
-            <li class="page-item"><a class="page-link" href="#" style="color:#15252B;">Next</a></li>
+            <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page-1; ?>" style="color:#15252B;">Previous<?php echo $p; ?></a></li>
+            <?php
+            $sql4 = "SELECT `review_id` FROM `course_review` WHERE course_id = '$c_id';";
+            $result4 = mysqli_query($conn, $sql4);
+
+            $numRows = (int) mysqli_num_rows($result4);
+            $x = ceil($numRows / 3);
+            for ($i = 1; $i <= $x; $i++) {
+            ?>
+                <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo $i; ?>" style="color:#15252B;"><?php echo $i; ?></a></li>
+            <?php } ?>
+                <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page+1; ?>" style="color:#15252B;">Next<?php echo $p; ?></a></li>
         </ul>
+
     </nav>
 </div>
 <?php

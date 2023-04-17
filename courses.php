@@ -40,7 +40,7 @@ include('components/header.php');
                         <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 50%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <p class="card-text"><?php echo substr($row['course_des'], 0, 50) . '...';?></p>
-                    <a href="course_des.php?course_id=<?php echo $row['id']; ?>" class="btn" style="background-color:#15252B; color:white">Details</a>
+                    <a href="course_des.php?course_id=<?php echo $row['id']; ?>& page= 1" class="btn" style="background-color:#15252B; color:white">Details</a>
                     <p class="card-text"><small class="text-muted"><?php echo $row['prerequisite'];?></small></p>
                 </div>
             </div>
