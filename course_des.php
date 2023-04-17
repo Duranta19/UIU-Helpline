@@ -2,7 +2,7 @@
 include('components/dbConnect.php');
 $c_id = $_GET['course_id'];
 $page = $_GET['page'];
-$userId = "1";
+$userId = "5";
 
 $p = ((int)$page - 1)*3;
 // echo $p;
@@ -23,6 +23,10 @@ if (isset($_POST['review_submit'])) {
 <?php
 $title = "Course Details";
 include('components/header.php');
+$sql5= "SELECT AVG(difficulty_level) as dl FROM `course_review` WHERE course_id ='$c_id';";
+$result5 = mysqli_query($conn, $sql5);
+$dl= mysqli_fetch_assoc($result5);
+// echo ceil($dl['dl']);
 ?>
 <!-- Course Details -->
 <div class="containeer">
@@ -36,9 +40,9 @@ include('components/header.php');
             </p>
             <label for="progress-bar">Difficulty Level</label>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php $l1 = ceil($dl['dl'])*20; echo $l1; ?>%; background-color:#15252B" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <form action="course_des.php?course_id=<?php echo $c_id; ?>" method="post">
+            <form action="course_des.php?course_id=<?php echo $c_id; ?>& page= 1" method="post">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #15252B; color: white;">
                     Write a review
@@ -61,7 +65,7 @@ include('components/header.php');
                                         <label class="form-check-label" for="flexRadioDisabled">Very Easy</label>
                                     </div>
                                     <div class="col" style="display:flex">
-                                        <input class="form-check-input" type="radio" name="level" id="level" value="12">
+                                        <input class="form-check-input" type="radio" name="level" id="level" value="2">
                                         <label class="form-check-label" for="flexRadioDisabled">Easy</label>
                                     </div>
                                     <div class="col" style="display:flex">
@@ -175,7 +179,7 @@ include('components/header.php');
     <nav aria-label="Page navigation example">
 
         <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page-1; ?>" style="color:#15252B;">Previous<?php echo $p; ?></a></li>
+            <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page-1; ?>" style="color:#15252B;">Previous</a></li>
             <?php
             $sql4 = "SELECT `review_id` FROM `course_review` WHERE course_id = '$c_id';";
             $result4 = mysqli_query($conn, $sql4);
@@ -186,7 +190,7 @@ include('components/header.php');
             ?>
                 <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo $i; ?>" style="color:#15252B;"><?php echo $i; ?></a></li>
             <?php } ?>
-                <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page+1; ?>" style="color:#15252B;">Next<?php echo $p; ?></a></li>
+                <li class="page-item"><a class="page-link" href="course_des.php?course_id=<?php echo $c_id; ?>& page= <?php echo (int)$page+1; ?>" style="color:#15252B;">Next</a></li>
         </ul>
 
     </nav>
