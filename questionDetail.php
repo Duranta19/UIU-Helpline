@@ -1,88 +1,92 @@
 <?php
-    // $comment_by = "1";
-    $question_id = $_GET['question_id'];
-    include('components/dbConnect.php');
-    //post details
-    $sql = "SELECT `id`, `question_title`, `question_details`, `question_by`, `date`, `question_file` FROM `questionbanklist` WHERE id = '$question_id'";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
+session_start();
+$ans_by = $_SESSION['userID'] ;
+$question_id = $_GET['question_id'];
+include('components/dbConnect.php');
+//post details
+$sql = "SELECT `id`, `question_title`, `question_details`, `question_by`, `date`, `question_file` FROM `questionbanklist` WHERE id = '$question_id'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 
-    //comment section
-    if(isset($_POST['post_comment'])){
-        $comment = $_POST['comment'];
+//comment section
+if (isset($_POST['post'])) {
+    $answer_details = $_POST['answer_details'];
+    $answer_file = $_FILES['answer_file']['name'];
 
-        $sql2 = "INSERT INTO `post_comment`(`comment`, `comment_by`, `post_id`) VALUES ('$comment','$comment_by','$post_id');";
-        $result2 = mysqli_query($conn, $sql2); 
+    $sql2 = "INSERT INTO `questionans`( `quesAns`, `ansBy`, `question_id`, `ansFile`) VALUES ('$answer_details','$ans_by','$question_id','$answer_file');";
+    $result2 = mysqli_query($conn, $sql2);
+    if ($result2) {
+        move_uploaded_file($_FILES['answer_file']['tmp_name'], __DIR__ . "/questions/" . $_FILES['answer_file']['name']);
+
     }
+}
 ?>
 <?php
 $title = "Question details";
 include "components/header.php";
 ?>
-<!-- post section -->
-<div class="container">
-    <div class="card w-100">
-        <div class="card-header" style="display:inline-flex">
-            <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
-            <p style="padding: 8px 10px; font-size:20px"><b>User Name</b></p>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $row['post_title']; ?></h5>
-            <p class="card-text"><?php echo $row['post_details']; ?></p>
-        </div>
-    </div>
-</div>
-<br>
-<br>
 
 
-<!-- post a comment -->
-<div class="container">
-<h5>Comments</h5>
-<hr>
-    <form action="post_details.php?post_id=<?php echo $post_id; ?>" method="post">
-        <div class="row">
-            <div class="col">
-                <label for="exampleFormControlTextarea1" class="form-label">Write a comment</label>
-                <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="2"></textarea>
-            </div>
-            <div class="col">
-                <input type="submit" name="post_comment" value="Post" class="btn mt-5" style="background-color: #15252B; color :white">
-            </div>
-
-        </div>
-    </form>
-</div>
-
-<!-- comment section -->
 <div class="container">
     <div class="row">
-        <?php
-            include('components/dbConnect.php');
-            $sql3 = "SELECT `id`,`name`, `comment`, `comment_by`, `post_id`, `date` FROM `post_comment` INNER JOIN accounts on accounts.userid = post_comment.comment_by WHERE `post_id` = '$post_id'";
-            $result3 = mysqli_query($conn,$sql3);
-            while($row = mysqli_fetch_assoc($result3)){
-        ?>
-        <div class="card mt-2">
-            <div class="card-header" style="display:inline-flex; height:55px">
-                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:30px; height:30px; border-radius:50%; margin-top:2px">
-                <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p><?php echo $row['comment']; ?>
-                    </p>
-                </blockquote>
+        <div class="col-md-8 my-2">
+            <h3>Question</h1>
+                <hr>
+                <div class="Container">
+                    <h5 class="card-title"><?php echo $row['question_title']; ?></h5>
+                    <p class="card-text"><?php echo $row['question_details']; ?></p>
+                    <label for=""><b>File: </b> </label>
+                    <a href="questions/<?php echo $row['question_file']; ?>" target="_blank"><?php echo $row['question_file']; ?></a>
+                </div>
+                <hr>
+                <br>
+                <br>
+                <h3>Answers</h3>
+                <hr>
+                <br>
+                <div class="container">
+                    <?php
+                    include('components/dbConnect.php');
+                    $sql3 = "SELECT `id`,`name`, `comment`, `comment_by`, `post_id`, `date` FROM `post_comment` INNER JOIN accounts on accounts.userid = post_comment.comment_by WHERE `post_id` = '$post_id'";
+                    $result3 = mysqli_query($conn, $sql3);
+                    while ($row = mysqli_fetch_assoc($result3)) {
+                    ?>
+                        <div class="card mt-2">
+                            <div class="card-header" style="display:inline-flex; height:55px">
+                                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:30px; height:30px; border-radius:50%; margin-top:2px">
+                                <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p><?php echo $row['comment']; ?>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <form action="questionDetail.php?question_id=<?php echo $question_id; ?>" method="post" enctype="multipart/form-data">
+                    <div class=" justify-content-center m-3">
+                        <h4>Answer the Question</h4>
+                        <hr>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="answer_details" rows="5" cols="50"></textarea>
+                        <label for="question_file" class="form-label">Upload an answer file</label>
+                        <input class="form-control" type="file" id="answer_file" name="answer_file">
+                        <input type="submit" value="post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
+
+                    </div>
+                </form>
+
             </div>
         </div>
-        <?php } ?>
     </div>
 </div>
 
 
-
-<br>
-<br>
 <?php
 include('components/footer.php');
 ?>
