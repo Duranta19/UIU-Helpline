@@ -1,6 +1,6 @@
 <?php
 session_start();
-$ans_by = $_SESSION['userID'] ;
+$ans_by = $_SESSION['userID'];
 $question_id = $_GET['question_id'];
 include('components/dbConnect.php');
 //post details
@@ -17,7 +17,6 @@ if (isset($_POST['post'])) {
     $result2 = mysqli_query($conn, $sql2);
     if ($result2) {
         move_uploaded_file($_FILES['answer_file']['tmp_name'], __DIR__ . "/questions/" . $_FILES['answer_file']['name']);
-
     }
 }
 ?>
@@ -43,11 +42,10 @@ include "components/header.php";
                 <br>
                 <h3>Answers</h3>
                 <hr>
-                <br>
                 <div class="container">
                     <?php
                     include('components/dbConnect.php');
-                    $sql3 = "SELECT `id`,`name`, `comment`, `comment_by`, `post_id`, `date` FROM `post_comment` INNER JOIN accounts on accounts.userid = post_comment.comment_by WHERE `post_id` = '$post_id'";
+                    $sql3 = "SELECT * FROM `questionans` INNER JOIN accounts on accounts.userid = questionans.ansBy WHERE `question_id` = '$question_id'";
                     $result3 = mysqli_query($conn, $sql3);
                     while ($row = mysqli_fetch_assoc($result3)) {
                     ?>
@@ -57,10 +55,9 @@ include "components/header.php";
                                 <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
                             </div>
                             <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p><?php echo $row['comment']; ?>
-                                    </p>
-                                </blockquote>
+                                    <p><?php echo $row['quesAns'];?></p>
+                                    <label for="">Solution File:</label>
+                                    <a href="questions/<?php echo $row['ansFile']; ?>" target="_blank"> <?php echo $row['ansFile']; ?></a>
                             </div>
                         </div>
                     <?php } ?>
