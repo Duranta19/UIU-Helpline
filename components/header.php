@@ -61,6 +61,9 @@
                         <li class="nav-item">
                             <a class="nav-link hov" href="#" style="color: white;">Q/A</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link hov" href="logout.php" style="color: white;">Logout</a>
+                        </li>
                     </ul>
                     <form class="d-flex" role="search" method="GET" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                         <input class="form-control me-2" type="search" name="search_key" placeholder="Search" aria-label="Search" style="background: transparent; color: white;">
