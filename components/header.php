@@ -53,7 +53,7 @@
                             <a class="nav-link hov" href="#" style="color: white;">Course Review</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Question Bank</a>
+                            <a class="nav-link hov" href="questionBankList.php" style="color: white;">Question Bank</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="#" style="color: white;">Books</a>
