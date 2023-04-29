@@ -29,8 +29,10 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$title = "Community";
+include "components/header.php";
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -74,3 +76,6 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+<?php
+include "components/footer.php";
+?>

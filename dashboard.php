@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -34,9 +32,10 @@
         </div>
         <div class="feature2">
             <div class="item">
-                <h1>Question Bank</h1> <br>
-                <p>Find all the questions and solve <br>
-                    of previous semester</p> <br>
+                <h1>Solve Your Problems </h1> <br>
+                <p>If you are stuck into your assignment or any <br>
+                    other problems regarding your course and <br>
+                    looking for a solution, visit here.</p> <br>
                 <a href="questionBankList.php">View</a>
             </div>
             <img
@@ -45,11 +44,10 @@
         <div class="feature1">
             <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/man-593333__480.jpg" />
             <div class="item">
-                <h1>Solve Your Problems</h1> <br>
-                <p>If you are stuck into your assignment or any <br>
-                    other problems regarding your course and <br>
-                    looking for a solution, visit here.</p> <br>
-                <a href="#">View</a>
+                <h1>Question Bank</h1> <br>
+                <p> Find all the questions and solve <br>
+                    of previous semester</p> <br>
+                <a href="questionBank1.php">View</a>
             </div>
         </div>
         <div class="feature2">
@@ -63,8 +61,7 @@
                 src="https://img.freepik.com/premium-photo/stack-books-with-magnifying-glass-highlighted-beige-background-world-book-day_616126-545.jpg" />
         </div>
         <div class="feature1">
-            <img
-                src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk" />
+            <img src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk"  alt="">
             <div class="item">
                 <h1>Community</h1> <br>
                 <p>Build up a community with all the students. <br>
@@ -76,7 +73,7 @@
     </div>
 </body>
 
-</html>
+
 <?php
 include "components/footer.php";
 ?>
