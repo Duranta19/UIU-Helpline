@@ -22,7 +22,7 @@
 
         footer {
             text-align: center;
-            padding: 3px;
+            padding: 5px;
             background-color: #15252B;
             color: white;
         }
@@ -50,7 +50,7 @@
                             <a class="nav-link hov" href="community.php" style="color: white;">Community</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Course Review</a>
+                            <a class="nav-link hov" href="courses.php" style="color: white;">Course Review</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hov" href="questionBankList.php" style="color: white;">Question Bank</a>
