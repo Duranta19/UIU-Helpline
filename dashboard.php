@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,8 @@
 
 <body>
     <div class="cover">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/640px-United_International_University_Monogram.svg.png" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/640px-United_International_University_Monogram.svg.png"
+            alt="">
         <div class="search">
             <input type="text" placeholder="Search">
             <button>Search</button>
@@ -23,12 +23,12 @@
     </div>
     <div class="features">
         <div class="feature1">
-            <img src="https://library.uiu.ac.bd//assets/images/about/5.jpg "/>
+            <img src="https://library.uiu.ac.bd//assets/images/about/5.jpg " />
             <div class="item">
                 <h1>Books</h1> <br>
                 <p>Find all the hard copy and <br>
                     soft copy of academic books.</p> <br>
-                <a href="#">View</a>
+                <a href="book.php">View</a>
             </div>
         </div>
         <div class="feature2">
@@ -38,7 +38,8 @@
                     of previous semester</p> <br>
                 <a href="questionBankList.php">View</a>
             </div>
-            <img src="https://dam.athabascau.ca/GF7L4P38/as/3wqgpg2464kmsmxtmgnwbh/write-site-hero-banner-1080259016-retina?auto=webp" />
+            <img
+                src="https://dam.athabascau.ca/GF7L4P38/as/3wqgpg2464kmsmxtmgnwbh/write-site-hero-banner-1080259016-retina?auto=webp" />
         </div>
         <div class="feature1">
             <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/man-593333__480.jpg" />
@@ -57,10 +58,12 @@
                     teaching method of faculties </p> <br>
                 <a href="#">View</a>
             </div>
-            <img src="https://img.freepik.com/premium-photo/stack-books-with-magnifying-glass-highlighted-beige-background-world-book-day_616126-545.jpg" />
+            <img
+                src="https://img.freepik.com/premium-photo/stack-books-with-magnifying-glass-highlighted-beige-background-world-book-day_616126-545.jpg" />
         </div>
         <div class="feature1">
-            <img src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk" />
+            <img
+                src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk" />
             <div class="item">
                 <h1>Community</h1> <br>
                 <p>Build up a community with all the students. <br>
