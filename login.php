@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
   <link rel="stylesheet" href="login.css" />
 </head>
 
-<body>
+<body style="background-color: white;">
 
   <?php
   if ($login) {
@@ -103,9 +103,9 @@ if (isset($_POST['login'])) {
         <tr>
           <td align="center" colspan="2">
             <!-- <button> -->
-              <input type="submit" value="Login" name="login">
               <!-- <a href="#" name="login" value="login">Log In </a> -->
             <!-- </button> -->
+            <input style="width:50%; background-color:rgb(26, 75, 125);color:white;" type="submit" value="Login" name="login">
           </td>
         </tr>
         <tr>
