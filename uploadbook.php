@@ -46,6 +46,7 @@ include "components/header.php";
 
 <body>
     <div class="container">
+        <h3 align="center"><b>Upload Book</b> </h3> <hr>
         <form action="uploadbook.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Book Title</label>
@@ -65,8 +66,8 @@ include "components/header.php";
                     <input type="number" class="form-control" placeholder="Upload Date" aria-label="date" name="upDate" />
                 </div>
             </div>
-            <div class="d-grid gap-2 my-4 col-6 mx-auto">
-                <button class="btn btn-outline-primary" type="submit" name="submit">Submit</button>
+            <div class="d-grid gap-2 col-6 mx-auto" style="margin-bottom: 90px; margin-top:30px;">
+                <button class="btn btn-outline-dark" type="submit" name="submit">Submit</button>
             </div>
         </form>
     </div>

@@ -53,22 +53,25 @@
                             <a class="nav-link hov" href="courses.php" style="color: white;">Course Review</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="questionBankList.php" style="color: white;">Question Bank</a>
+                            <a class="nav-link hov" href="questionBank1.php" style="color: white;">Question Bank</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Books</a>
+                            <a class="nav-link hov" href="book.php" style="color: white;">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hov" href="#" style="color: white;">Q/A</a>
+                            <a class="nav-link hov" href="questionBankList.php" style="color: white;">Q/A</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link hov" href="logout.php" style="color: white;">Logout</a>
-                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link hov" href="logout.php" style="color:red;">Logout</a>
+                        </li> -->
                     </ul>
                     <form class="d-flex" role="search" method="GET" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                         <input class="form-control me-2" type="search" name="search_key" placeholder="Search" aria-label="Search" style="background: transparent; color: white;">
-                        <button  class="btn btn-outline-success" name="search" type="submit">Search</button>
+                        <button  class="btn btn-outline-info" name="search" type="submit">Search</button>
                     </form>
+
+                    <a class="nav-link hov mx-3 p-1 "  href="logout.php" style="color:red;">Logout</a>
+
                 </div>
             </div>
         </nav>

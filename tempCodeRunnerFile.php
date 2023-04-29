@@ -1,37 +1,5 @@
 <?php
-$title = "Solve Problem";
-include "components/header.php";
-?>
-<?php
-session_start();
-$question_by = $_SESSION['userID'];
-$search_flag = false;
-if (isset($_POST['post'])) {
-    include('components/dbConnect.php');
-    $question_title = $_POST['question_title'];
-    $question_details =  $_POST['question_details'];
-    $question_file = $_FILES['question_file']['name'];
-
-    $sql = "INSERT INTO `questionbanklist`(`question_title`, `question_details`,`question_by`,`question_file`) VALUES ('$question_title','$question_details', '$question_by','$question_file');";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        move_uploaded_file($_FILES['question_file']['tmp_name'], __DIR__ . "/questions/" . $_FILES['question_file']['name']);
-        // move_uploaded_file($_FILES['question_file']['temp_name'],"questions/$question_file");
-
-    }
-}
-
-// search
-if (isset($_GET['search'])) {
-    $key = $_GET['search_key'];
-    // echo $key;
-    $search_flag = true;
-}
-?>
-<h3 class="m-4" style="text-align: center;">Solve your problems</h3>
-
-<div class="row">
-    <div class="col-md-8">
+<div class="col-md-8">
         <div class="container">
             <?php
             if ($search_flag == false) {
@@ -77,27 +45,3 @@ if (isset($_GET['search'])) {
             } ?>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="container">
-            <form action="questionBankList.php" method="post" enctype="multipart/form-data">
-                <div class=" justify-content-center m-3">
-                    <h4>Post a Question</h4>
-                    <hr>
-                    <label for="exampleFormControlInput1" class="form-label">Question title</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="question_title" placeholder="">
-                    <label for="exampleFormControlTextarea1" class="form-label">Describe Question</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="question_details" rows="5" cols="50"></textarea>
-                    <br> <label for="question_file" class="form-label">Upload a Question</label>
-                    <input class="form-control" type="file" id="question_file" name="question_file">
-                    <input type="submit" value="Post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
-
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div>
-
-<?php
-include "components/footer.php";
-?>

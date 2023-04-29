@@ -20,7 +20,7 @@ $title = "Post details";
 include "components/header.php";
 ?>
 <!-- post section -->
-<div class="container-fluid">
+<div class="container mt-3">
     <div class="card w-100">
         <div class="card-header" style="display:inline-flex">
             <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
@@ -34,11 +34,12 @@ include "components/header.php";
 </div>
 <br>
 <br>
-<h5>Comments</h5>
-<hr>
+
 
 <!-- post a comment -->
 <div class="container">
+<h5>Comments</h5>
+<hr>
     <form action="post_details.php?post_id=<?php echo $post_id; ?>" method="post">
         <div class="row">
             <div class="col">

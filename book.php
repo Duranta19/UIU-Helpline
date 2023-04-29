@@ -10,19 +10,17 @@ $query = "SELECT * FROM `book_details`";
 $result = mysqli_query($conn, $query);
 ?>
 
+<header>
+<link rel="stylesheet" href="book.css" />
 
+</header>
 
-
-<head>
-    <link rel="stylesheet" href="book.css" />
-</head>
 <body>
     <div class="cover">
         <img src="img/oldbooks (1).jpg" alt="" class="img1">
         <h1>Book Library</h1>
-
     </div>
-    <a class="btn" href="uploadbook.php" role="button"><img src="img/upload1.png" alt="" class="uploadimg" /></a>
+    <a class="btn1" href="uploadbook.php" role="button"><img src="img/upload1.png" alt="" class="uploadimg" /></a>
 <div class="container">
 
 <div class="row">

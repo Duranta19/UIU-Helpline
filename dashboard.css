@@ -30,7 +30,7 @@
     margin: 20px;
 }
 .cover .search button:hover{
-    background-color: rgb(246, 255, 222);
+    background-color: rgb(250, 250, 250);
     color: #000000;
 }
 .cover .search input:hover{
