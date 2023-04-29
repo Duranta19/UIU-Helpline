@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
-<body>
+<body style="background-color: white;">
+
     <div class="cover">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/640px-United_International_University_Monogram.svg.png" alt="">
         <div class="search">
@@ -55,7 +56,7 @@
                 <h1>Course Review</h1> <br>
                 <p>Find reviews of different courses and <br>
                     teaching method of faculties </p> <br>
-                <a href="#">View</a>
+                <a href="courses.php">View</a>
             </div>
             <img src="https://img.freepik.com/premium-photo/stack-books-with-magnifying-glass-highlighted-beige-background-world-book-day_616126-545.jpg" />
         </div>
