@@ -13,10 +13,10 @@
     <div class="cover">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/640px-United_International_University_Monogram.svg.png"
             alt="">
-        <!-- <div class="search">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
-        </div> -->
+        <div class="search">
+            <!-- <input type="text" placeholder="Search"> -->
+            <a class="btn btn-danger "  href="logout.php" style="color:white;">Logout</a>
+        </div>
         <h1>UIU Helpline</h1> <br>
         <p>A solution center where students of UIU will find proper <br>
             guidelines, resources and help</p>
@@ -40,17 +40,17 @@
 
             <div class="form-check form-check-inline" style="margin-left: 35%;">
                 <input class="form-check-input" type="radio" name="select_type" id="inlineRadio1"
-                    value="community">
+                    value="community" required>
                 <label class="form-check-label" for="inlineRadio1">Community</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="select_type" id="inlineRadio2"
-                    value="course">
+                    value="course" required>
                 <label class="form-check-label" for="inlineRadio2">Course</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="select_type" id="inlineRadio3" 
-                value="book">
+                value="book" required>
                 <label class="form-check-label" for="inlineRadio3">Books</label>
             </div>
 
