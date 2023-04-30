@@ -8,6 +8,11 @@
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
 
+    $pid = $row['post_by'];
+    $sql4 ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+    $result3 = mysqli_query($conn, $sql4);
+    $img = mysqli_fetch_assoc($result3);
+
     //comment section
     if(isset($_POST['post_comment'])){
         $comment = $_POST['comment'];
@@ -24,7 +29,7 @@ include "components/header.php";
 <div class="container mt-3">
     <div class="card w-100">
         <div class="card-header" style="display:inline-flex">
-            <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+            <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
             <p style="padding: 8px 10px; font-size:20px"><b>User Name</b></p>
         </div>
         <div class="card-body">

@@ -11,8 +11,11 @@ if($type == 'community'){
 else if($type == 'course'){
     header('Location: courses.php?search_key=' .$key .'&search=');
 }
+else if ($type == 'book'){
+    header('Location: book.php?search_key=' .$key .'&search=');
+}
 else{
-
+    header('Location: dashboard.php');
 }
 // echo $key;
 ?>

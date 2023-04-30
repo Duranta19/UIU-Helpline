@@ -2,8 +2,8 @@
 include('components/dbConnect.php');
 $c_id = $_GET['course_id'];
 $page = $_GET['page'];
-$userId = "5";
-
+session_start();
+$userId = $_SESSION['userID'] ;
 $p = ((int)$page - 1)*3;
 // echo $p;
 $sql = "SELECT * FROM `course_details` WHERE id = '$c_id';";
@@ -118,11 +118,16 @@ $dl= mysqli_fetch_assoc($result5);
         $sql3 = "SELECT * FROM `course_review` INNER JOIN accounts on course_review.user_id = accounts.userid WHERE course_id = '$c_id' LIMIT $p,3 ;";
         $result3 = mysqli_query($conn, $sql3);
 
-        while ($row = mysqli_fetch_assoc($result3)) { ?>
+        while ($row = mysqli_fetch_assoc($result3)) { 
+            $pid = $row['user_id'];
+            $sqlImg ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+            $resultImg = mysqli_query($conn, $sqlImg);
+            $img = mysqli_fetch_assoc($resultImg);
+            ?>
             <div class="col-md-4">
                 <div class="card  shadow p-3 mb-5 bg-body rounded">
                     <div class="card-title" style="display:inline-flex">
-                        <img src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="" style="height: 50px; width:50px; border-radius:50%">
+                        <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" alt="" style="height: 40px; width:40px; border-radius:50%">
                         <h3><?php echo $row['name']; ?></h3>
                     </div>
                     <div class="card-body">

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $upload_loc = 'img/' . $bimg;
 
     if ($book_title != "" && $book_pdf != "" && $bimg != "") {
-        $sql = "INSERT INTO `book_details` (`b_title`, `b_pdf`, `b_img`, `u_date`) VALUES ('$book_title', '$book_pdf', '$bimg', '$udate')";
+        $sql = "INSERT INTO `book_details` (`b_title`, `b_pdf`, `b_img`) VALUES ('$book_title', '$book_pdf', '$bimg')";
         $result = mysqli_query($conn, $sql);
         move_uploaded_file($_FILES['bimg']['tmp_name'],"img/$bimg");
         move_uploaded_file($_FILES['bpdf']['tmp_name'], __DIR__ . "/img/" . $_FILES['bpdf']['name']);
