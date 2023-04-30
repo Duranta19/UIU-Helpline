@@ -1,10 +1,11 @@
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body style="background-color: white;">
@@ -12,13 +13,52 @@
     <div class="cover">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/640px-United_International_University_Monogram.svg.png"
             alt="">
-        <div class="search">
+        <!-- <div class="search">
             <input type="text" placeholder="Search">
             <button>Search</button>
-        </div>
+        </div> -->
         <h1>UIU Helpline</h1> <br>
         <p>A solution center where students of UIU will find proper <br>
             guidelines, resources and help</p>
+    </div>
+
+    <!-- search -->
+    <div class="container" class="">
+        <form class="" method="GET" action="search.php">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control me-2" type="search" name="search_key" placeholder="Search"
+                        aria-label="Search"
+                        style="background: transparent; color: rgb(2, 0, 0); margin-top: 20px; width: 70%; margin-left: 30%;">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-dark" name="search" type="submit"
+                        style="margin-top: 20px;">Search</button>
+                </div>
+            </div>
+
+
+            <div class="form-check form-check-inline" style="margin-left: 35%;">
+                <input class="form-check-input" type="radio" name="select_type" id="inlineRadio1"
+                    value="community">
+                <label class="form-check-label" for="inlineRadio1">Community</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="select_type" id="inlineRadio2"
+                    value="course">
+                <label class="form-check-label" for="inlineRadio2">Course</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="select_type" id="inlineRadio3" 
+                value="book">
+                <label class="form-check-label" for="inlineRadio3">Books</label>
+            </div>
+
+
+
+        </form>
+<!-- <hr> -->
+<br>
     </div>
     <div class="features">
         <div class="feature1">
@@ -61,7 +101,8 @@
                 src="https://img.freepik.com/premium-photo/stack-books-with-magnifying-glass-highlighted-beige-background-world-book-day_616126-545.jpg" />
         </div>
         <div class="feature1">
-            <img src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk"  alt="">
+            <img src="https://constructor.university/sites/default/files/styles/header_image/public/2022-11/header_international_business_administration.jpg?itok=IbhD2cYk"
+                alt="">
             <div class="item">
                 <h1>Community</h1> <br>
                 <p>Build up a community with all the students. <br>
@@ -71,9 +112,13 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
 </body>
-
-
 <?php
-include "components/footer.php";
+include("components/footer.php");
 ?>

@@ -5,7 +5,7 @@ $s_flag = false;
 if (isset($_GET['search_key'])) {
     $s_flag = true;
     $key = $_GET['search_key'];
-    echo $key;
+    // echo $key;
 
     $sql3 = "SELECT * FROM `course_details` WHERE course_code LIKE '%$key%' or course_title like '%$key%' or course_des like '%$key%' ORDER BY course_code DESC";
     $result3  = mysqli_query($conn,$sql3);

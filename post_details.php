@@ -1,5 +1,6 @@
 <?php
-    $comment_by = "1";
+    session_start();
+    $comment_by = $_SESSION['userID'] ;
     $post_id = $_GET['post_id'];
     include('components/dbConnect.php');
     //post details

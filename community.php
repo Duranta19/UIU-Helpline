@@ -19,6 +19,12 @@ if(isset($_GET['search'])){
     // echo $key;
     $search_flag = true;
 }
+// else if (! is_null($key) ){
+//     $is_null($d); 
+// }
+else{
+    $search_flag = false;
+}
 ?>
 <?php
 $title = "Community";
