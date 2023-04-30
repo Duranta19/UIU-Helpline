@@ -1,6 +1,6 @@
 <?php
 $login = false;
- 
+$loginError = '';
 if (isset($_POST['login'])) {
   include('components/dbConnect.php');
   $username = $_POST['username'];
