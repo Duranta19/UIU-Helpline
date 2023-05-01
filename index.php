@@ -72,8 +72,8 @@ if (isset($_POST['login'])) {
   </div>
   <img src="img/m2.jpg" class="limg" alt="" />
   <div class="right">
-    <form action="login.php" method="post" style="position: relative;">
-      <h1 style="margin-left:100px; margin-bottom: 10px"><u>Login</u></h1>
+    <form action="index.php" method="post" style="position: relative;">
+      <h1 style="margin-left: 0%; margin-bottom: 10px"><u>Login</u></h1>
       <table>
         <tr>
           <td>
