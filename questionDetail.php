@@ -48,10 +48,15 @@ include "components/header.php";
                     $sql3 = "SELECT * FROM `questionans` INNER JOIN accounts on accounts.userid = questionans.ansBy WHERE `question_id` = '$question_id'";
                     $result3 = mysqli_query($conn, $sql3);
                     while ($row = mysqli_fetch_assoc($result3)) {
+                        $pid = $row['ansBy'];
+                        $sql4 ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+                        $result4 = mysqli_query($conn, $sql4);
+                        $img = mysqli_fetch_assoc($result4);
                     ?>
                         <div class="card mt-2">
                             <div class="card-header" style="display:inline-flex; height:55px">
-                                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:30px; height:30px; border-radius:50%; margin-top:2px">
+                                <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';"  style="width:30px; height:30px; border-radius:50%; margin-top:2px">
+
                                 <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
                             </div>
                             <div class="card-body">

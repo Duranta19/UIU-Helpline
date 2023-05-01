@@ -50,7 +50,7 @@ include('components/header.php');
         ?>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="img/<?php echo $row['img']; ?>" class="card-img-top" alt="...">
+                    <img src="img/<?php echo $row['img']; ?>" style="height: 150px;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['course_title']; ?></h5>
                         <label for="progress-bar">Difficulty Level</label>
@@ -74,7 +74,7 @@ include('components/header.php');
             ?>
                 <div class="col-md-3">
                     <div class="card">
-                        <img src="img/<?php echo $row['img']; ?>" class="card-img-top" alt="...">
+                        <img src="img/<?php echo $row['img']; ?>" style="height: 100px;" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['course_title']; ?></h5>
                             <label for="progress-bar">Difficulty Level</label>

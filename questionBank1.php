@@ -30,60 +30,25 @@ if (isset($_GET['search'])) {
 <header>
     <style>
         .box {
-            border-radius: 10px;
-            padding: 30px;
-            position: relative;
-            background-color: rgb(226, 227, 229);
-            transition: 0.3s;
-            border-radius: 20px;
-            margin-top: 20px;
-            margin: 50px;
-            display: flex;
-        }
-
-        .button {
-            display: flex;
-            margin-left: 700px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-button {
-            width: 150px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(7, 52, 43);
-            color: white;
-            size: 40px;
-            border-radius: 20px;
+            /* border-radius: 10px; */
+            padding: 2px;
+            /* position: relative; */
+            /* background-color: rgb(226, 227, 229); */
+            /* transition: 0.3s; */
+            /* border-radius: 20px; */
+            /* margin-top: 10px; */
+            margin: 2px;
+            /* width: 50%; */
+            /* display: flex; */
         }
 
 
-        .Course-info h1 {
-            font-size: 30px;
+        .Course-info .h4 {
+            /* font-size: 30px; */
+            /* width: 100%; */
         }
 
-        .pagination {
-            margin-top: 300px;
-            margin: 50px;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover:not(.active) {
-            background-color: #121f19;
-        }
-
-        .active {
-            background-color: rgb(27, 24, 24)
-        }
+       
     </style>
 </header>
 
@@ -92,8 +57,6 @@ if (isset($_GET['search'])) {
 <body>
 
     <div class="container mt-3" align="center">
-        <!-- Button trigger modal -->
-        <h3></h3>
         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Upload Questions
         </button>
@@ -139,14 +102,12 @@ if (isset($_GET['search'])) {
 
                 <div class="box">
                     <div class="Course-info">
-                        <h1><?php echo $row['question_title1']; ?></h1>
+                        <h4><?php echo $row['question_title1']; ?></h1>
                         <p><a href="questions/<?php echo $row['question_file1']; ?>" target="_blank"><?php echo $row['question_file1']; ?></a></p>
                         <p>By: <?php echo $row['name']; ?></p>
                     </div>
-                    <div class="button">
-                        <button class="card-button"><a href="questions/<?php echo $row['question_file1']; ?>" style="text-decoration: none; color:white;" target="_blank"> View</a></button>
-                    </div>
-                </div>
+                    
+                </div> <hr>
             <?php }
         } else {
             include('components/dbConnect.php');
@@ -155,14 +116,12 @@ if (isset($_GET['search'])) {
             while ($row = mysqli_fetch_assoc($result2)) { ?>
                <div class="box">
                     <div class="Course-info">
-                        <h1><?php echo $row['question_title1']; ?></h1>
+                        <h4><?php echo $row['question_title1']; ?></h1>
                         <p><a href="questions/<?php echo $row['question_file1']; ?>" target="_blank"><?php echo $row['question_file1']; ?></a></p>
                         <p>By: <?php echo $row['name']; ?></p>
                     </div>
-                    <div class="button">
-                        <button class="card-button"><a href="questions/<?php echo $row['question_file1']; ?>" style="text-decoration: none; color:white;" target="_blank"> View</a></button>
-                    </div>
-                </div>
+                    
+                </div> <hr>
         <?php }
         } ?>
     </div>
