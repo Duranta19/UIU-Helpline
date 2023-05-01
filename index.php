@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
   <img src="img/m2.jpg" class="limg" alt="" />
   <div class="right">
     <form action="login.php" method="post" style="position: relative;">
-      <h1 style="margin-left: 30%; margin-bottom: 10px"><u>Login</u></h1>
+      <h1 style="margin-left: 0%; margin-bottom: 10px"><u>Login</u></h1>
       <table>
         <tr>
           <td>
