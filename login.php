@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
   $data = mysqli_fetch_assoc($result);
 
   if ($numRows == 1) {
-      if ($pass == $data['password']) {
+      if (strcmp($pass,$data['password'])) {
         $login = true;
         session_start();
         $_SESSION['username'] = $data['name'];
@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
   <img src="img/m2.jpg" class="limg" alt="" />
   <div class="right">
     <form action="login.php" method="post" style="position: relative;">
-      <h1 style="margin-left: 30%; margin-bottom: 10px"><u>Login</u></h1>
+      <h1 style="margin-left:100px; margin-bottom: 10px"><u>Login</u></h1>
       <table>
         <tr>
           <td>
@@ -119,6 +119,19 @@ if (isset($_POST['login'])) {
       </table>
     </form>
   </div>
+  <br> <br> <br> <br> <br> <br>
 </body>
 
+
 </html>
+
+<footer style="
+            text-align: center;
+            padding: 5px;
+            background-color: #15252B;
+            color: white;
+        ">
+        <p style="text-align: center; color: white;"><b>UIU Helpline</b></p>
+        <p style="text-align: center; color: white;">www.uiuhelpline.com</p>
+        <p style="text-align: center; color: white;">© ALL RIGHTS RESERVE BY TEAM VOID</p>
+    </footer>

@@ -16,7 +16,7 @@ if (isset($_GET['search_key'])) {
     $key = $_GET['search_key'];
     // echo $key;
 
-    $sql3 = "SELECT * FROM `book_details` WHERE b_title LIKE '%$key%' ORDER BY u_date DESC";
+    $sql3 = "SELECT * FROM `book_details` WHERE b_title LIKE '%$key%'";
     $result3  = mysqli_query($conn,$sql3);
 }
 ?>
