@@ -29,7 +29,7 @@ include "components/header.php";
 <div class="container">
     <div class="row">
         <div class="col-md-8 my-2">
-            <h3>Question</h1>
+            <h3>Problem</h1>
                 <hr>
                 <div class="Container">
                     <h5 class="card-title"><?php echo $row['question_title']; ?></h5>
@@ -40,7 +40,7 @@ include "components/header.php";
                 <hr>
                 <br>
                 <br>
-                <h3>Answers</h3>
+                <h3>Solutions</h3>
                 <hr>
                 <div class="container">
                     <?php
@@ -48,10 +48,15 @@ include "components/header.php";
                     $sql3 = "SELECT * FROM `questionans` INNER JOIN accounts on accounts.userid = questionans.ansBy WHERE `question_id` = '$question_id'";
                     $result3 = mysqli_query($conn, $sql3);
                     while ($row = mysqli_fetch_assoc($result3)) {
+                        $pid = $row['ansBy'];
+                        $sql4 ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+                        $result4 = mysqli_query($conn, $sql4);
+                        $img = mysqli_fetch_assoc($result4);
                     ?>
                         <div class="card mt-2">
                             <div class="card-header" style="display:inline-flex; height:55px">
-                                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:30px; height:30px; border-radius:50%; margin-top:2px">
+                                <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';"  style="width:30px; height:30px; border-radius:50%; margin-top:2px">
+
                                 <p style="padding: 8px 10px; font-size:16px"><b><?php echo $row['name']; ?></b></p>
                             </div>
                             <div class="card-body">
@@ -68,10 +73,10 @@ include "components/header.php";
             <div class="container">
                 <form action="questionDetail.php?question_id=<?php echo $question_id; ?>" method="post" enctype="multipart/form-data">
                     <div class=" justify-content-center m-3">
-                        <h4>Answer the Question</h4>
+                        <h4>Solve the problem</h4>
                         <hr>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="answer_details" rows="5" cols="50"></textarea>
-                        <label for="question_file" class="form-label">Upload an answer file</label>
+                        <label for="question_file" class="form-label">Upload an solution file</label>
                         <input class="form-control" type="file" id="answer_file" name="answer_file">
                         <input type="submit" value="post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
 

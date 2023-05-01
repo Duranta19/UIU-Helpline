@@ -29,6 +29,7 @@ if (isset($_GET['search'])) {
 }
 ?>
 <h3 class="m-4" style="text-align: center;">Solve your problems</h3>
+<hr>
 
 <div class="row">
     <div class="col-md-8">
@@ -38,10 +39,15 @@ if (isset($_GET['search'])) {
                 include('components/dbConnect.php');
                 $sql2 = "SELECT * FROM `questionbanklist` INNER JOIN accounts on accounts.userid = questionbanklist.question_by WHERE 1 ORDER by date DESC;";
                 $result2 = mysqli_query($conn, $sql2);
-                while ($row = mysqli_fetch_assoc($result2)) { ?>
+                while ($row = mysqli_fetch_assoc($result2)) {
+                    $pid = $row['question_by'];
+                    $sql3 = "SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+                    $result3 = mysqli_query($conn, $sql3);
+                    $img = mysqli_fetch_assoc($result3);
+            ?>
                     <div class="card w-75 m-auto my-3">
                         <div class="card-header" style="display:inline-flex">
-                            <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+                        <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
                             <p style="padding: 8px 10px; font-size:20px"><b><?php echo $row['name']; ?></b></p>
                         </div>
                         <div class="card-body">
@@ -49,7 +55,7 @@ if (isset($_GET['search'])) {
                             <p class="card-text" style="text-overflow: ellipsis; overflow: hidden;"><?php echo $row['question_details']; ?></p>
                         </div>
                         <div class="card-bottom">
-                            <a class="btn btn-dark m-2" style=" color:aliceblue" href="questionDetail.php?question_id=<?php echo $row['id']; ?>">View Question</a>
+                            <a class="btn btn-outline-dark m-2" href="questionDetail.php?question_id=<?php echo $row['id']; ?>">View Problem</a>
                             <a href="questionDetail.php?question_id=<?php echo $row['id']; ?>"><?php echo $row['question_file']; ?></a>
                         </div>
                     </div>
@@ -58,10 +64,15 @@ if (isset($_GET['search'])) {
                 include('components/dbConnect.php');
                 $sql2 = "SELECT * FROM `questionbanklist` INNER JOIN accounts on accounts.userid = questionbanklist.question_by where questionbanklist.question_title like '%$key%' or questionbanklist.question_details like '%$key%';";
                 $result2 = mysqli_query($conn, $sql2);
-                while ($row = mysqli_fetch_assoc($result2)) { ?>
+                while ($row = mysqli_fetch_assoc($result2)) {
+                    $pid = $row['question_by'];
+                    $sql3 = "SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+                    $result3 = mysqli_query($conn, $sql3);
+                    $img = mysqli_fetch_assoc($result3);
+                    ?>
                     <div class="card w-75 m-auto my-3">
                         <div class="card-header" style="display:inline-flex">
-                            <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+                        <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
                             <p style="padding: 8px 10px; font-size:20px"><b><?php echo $row['name']; ?></b></p>
                         </div>
                         <div class="card-body">
@@ -69,7 +80,7 @@ if (isset($_GET['search'])) {
                             <p class="card-text"><?php echo $row['question_details']; ?></p>
                         </div>
                         <div class="card-bottom">
-                            <a class="btn btn-dark m-2" style=" color:aliceblue" href="questionDetail.php?question_id=<?php echo $row['id']; ?>">View Question</a>
+                            <a class="btn btn-outline-dark m-2" href="questionDetail.php?question_id=<?php echo $row['id']; ?>">View Question</a>
                             <a href="questionDetail.php?question_id=<?php echo $row['id']; ?>"><?php echo $row['question_file']; ?></a>
                         </div>
                     </div>
@@ -81,13 +92,13 @@ if (isset($_GET['search'])) {
         <div class="container">
             <form action="questionBankList.php" method="post" enctype="multipart/form-data">
                 <div class=" justify-content-center m-3">
-                    <h4>Post a Question</h4>
+                    <h4>Post a Problem</h4>
                     <hr>
-                    <label for="exampleFormControlInput1" class="form-label">Question title</label>
+                    <label for="exampleFormControlInput1" class="form-label"> Problem title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="question_title" placeholder="">
-                    <label for="exampleFormControlTextarea1" class="form-label">Describe Question</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Describe Problem</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="question_details" rows="5" cols="50"></textarea>
-                    <br> <label for="question_file" class="form-label">Upload a Question</label>
+                    <br> <label for="question_file" class="form-label">Upload problem file </label>
                     <input class="form-control" type="file" id="question_file" name="question_file">
                     <input type="submit" value="Post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
 

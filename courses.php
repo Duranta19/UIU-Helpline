@@ -1,11 +1,13 @@
 <?php
 include('components/dbConnect.php');
+session_start();
+$userId = $_SESSION['userID'] ;
 $s_flag = false;
 // echo htmlspecialchars($_SERVER['PHP_SELF']);
 if (isset($_GET['search_key'])) {
     $s_flag = true;
     $key = $_GET['search_key'];
-    echo $key;
+    // echo $key;
 
     $sql3 = "SELECT * FROM `course_details` WHERE course_code LIKE '%$key%' or course_title like '%$key%' or course_des like '%$key%' ORDER BY course_code DESC";
     $result3  = mysqli_query($conn,$sql3);
@@ -18,7 +20,7 @@ include('components/header.php');
 <br>
 <div class="container text-center">
     <h4>Course Review</h4>
-    <h5> 43 Courses 1053 Reviews</h5>
+    <!-- <h5> 43 Courses 1053 Reviews</h5> -->
     <a href="addNewCourse.php" class="btn" style="background-color: #15252B; color:white; border-radius:25px;">Add Course</a>
 </div>
 <hr>
@@ -50,7 +52,7 @@ include('components/header.php');
         ?>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="img/<?php echo $row['img']; ?>" class="card-img-top" alt="...">
+                    <img src="img/<?php echo $row['img']; ?>" style="height: 150px;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['course_title']; ?></h5>
                         <label for="progress-bar">Difficulty Level</label>
@@ -74,7 +76,7 @@ include('components/header.php');
             ?>
                 <div class="col-md-3">
                     <div class="card">
-                        <img src="img/<?php echo $row['img']; ?>" class="card-img-top" alt="...">
+                        <img src="img/<?php echo $row['img']; ?>" style="height: 100px;" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['course_title']; ?></h5>
                             <label for="progress-bar">Difficulty Level</label>

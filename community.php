@@ -19,6 +19,12 @@ if(isset($_GET['search'])){
     // echo $key;
     $search_flag = true;
 }
+// else if (! is_null($key) ){
+//     $is_null($d); 
+// }
+else{
+    $search_flag = false;
+}
 ?>
 <?php
 $title = "Community";
@@ -54,11 +60,16 @@ include "components/header.php";
     include('components/dbConnect.php');
     $sql2 = "SELECT * FROM `community_post` INNER JOIN accounts on accounts.userid = community_post.post_by WHERE 1 ORDER by date DESC;";
     $result2 = mysqli_query($conn, $sql2);
-    while($row = mysqli_fetch_assoc($result2)) { ?>
+    while($row = mysqli_fetch_assoc($result2)) {
+        $pid = $row['post_by'];
+        $sql3 ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+        $result3 = mysqli_query($conn, $sql3);
+        $img = mysqli_fetch_assoc($result3);
+        ?>
     <div class="card w-75 m-auto my-3">
         <div class="card-header" style="display:inline-flex">
-            <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
-            <p style="padding: 8px 10px; font-size:20px"><b><?php echo $row['name'];?></b></p>
+            <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+            <p style="padding: 8px 10px; font-size:20px"><b><?php echo $row['name']; ;?></b></p>
         </div>
         <div class="card-body">
             <h5 class="card-title"><a href="post_details.php?post_id=<?php echo $row['id'];?>"><?php echo $row['post_title'];?></a></h5>
@@ -70,10 +81,15 @@ include "components/header.php";
         include('components/dbConnect.php');
         $sql2 = "SELECT * FROM `community_post` INNER JOIN accounts on accounts.userid = community_post.post_by where community_post.post_title like '%$key%' or community_post.post_details like '%$key%';";
         $result2 = mysqli_query($conn, $sql2);
-        while($row = mysqli_fetch_assoc($result2)) { ?>
+        while($row = mysqli_fetch_assoc($result2)) {
+        $pid = $row['post_by'];
+        $sql3 ="SELECT `photo_loc` FROM `accounts` WHERE userid = '$pid';";
+        $result3 = mysqli_query($conn, $sql3);
+        $img = mysqli_fetch_assoc($result3);
+            ?>
         <div class="card w-75 m-auto my-3">
             <div class="card-header" style="display:inline-flex">
-                <img src="https://t3.ftcdn.net/jpg/05/34/22/36/360_F_534223627_0JFVJDBwNku7LyLazrtN6YBTJ2agUfP5.jpg" alt="" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
+            <img src="img/<?php echo $img['photo_loc']?>" alt="" onerror="this.src='img/altimg.jpg';" style="width:50px; height:50px; border-radius:50%; margin-top:2px">
                 <p style="padding: 8px 10px; font-size:20px"><b><?php echo $row['name'];?></b></p>
             </div>
             <div class="card-body">
