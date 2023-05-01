@@ -1,5 +1,7 @@
 <?php
 include('components/dbConnect.php');
+session_start();
+$userId = $_SESSION['userID'] ;
 $s_flag = false;
 // echo htmlspecialchars($_SERVER['PHP_SELF']);
 if (isset($_GET['search_key'])) {
@@ -18,7 +20,7 @@ include('components/header.php');
 <br>
 <div class="container text-center">
     <h4>Course Review</h4>
-    <h5> 43 Courses 1053 Reviews</h5>
+    <!-- <h5> 43 Courses 1053 Reviews</h5> -->
     <a href="addNewCourse.php" class="btn" style="background-color: #15252B; color:white; border-radius:25px;">Add Course</a>
 </div>
 <hr>

@@ -60,12 +60,6 @@ include "components/header.php";
                 <label for="formFile" class="form-label">Image</label>
                 <input class="form-control" type="file" id="formFile" name="bimg" />
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for="exampleFormControlInput1" class="form-label">Upload Date</label>
-                    <input type="number" class="form-control" placeholder="Upload Date" aria-label="date" name="upDate" />
-                </div>
-            </div>
             <div class="d-grid gap-2 col-6 mx-auto" style="margin-bottom: 90px; margin-top:30px;">
                 <button class="btn btn-outline-dark" type="submit" name="submit">Submit</button>
             </div>

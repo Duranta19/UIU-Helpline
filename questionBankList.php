@@ -92,13 +92,13 @@ if (isset($_GET['search'])) {
         <div class="container">
             <form action="questionBankList.php" method="post" enctype="multipart/form-data">
                 <div class=" justify-content-center m-3">
-                    <h4>Post a Question</h4>
+                    <h4>Post a Problem</h4>
                     <hr>
-                    <label for="exampleFormControlInput1" class="form-label">Question title</label>
+                    <label for="exampleFormControlInput1" class="form-label"> Problem title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="question_title" placeholder="">
-                    <label for="exampleFormControlTextarea1" class="form-label">Describe Question</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Describe Problem</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="question_details" rows="5" cols="50"></textarea>
-                    <br> <label for="question_file" class="form-label">Upload a Question</label>
+                    <br> <label for="question_file" class="form-label">Upload problem file </label>
                     <input class="form-control" type="file" id="question_file" name="question_file">
                     <input type="submit" value="Post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
 

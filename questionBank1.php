@@ -30,22 +30,8 @@ if (isset($_GET['search'])) {
 <header>
     <style>
         .box {
-            /* border-radius: 10px; */
             padding: 2px;
-            /* position: relative; */
-            /* background-color: rgb(226, 227, 229); */
-            /* transition: 0.3s; */
-            /* border-radius: 20px; */
-            /* margin-top: 10px; */
             margin: 2px;
-            /* width: 50%; */
-            /* display: flex; */
-        }
-
-
-        .Course-info .h4 {
-            /* font-size: 30px; */
-            /* width: 100%; */
         }
 
        

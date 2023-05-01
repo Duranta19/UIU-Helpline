@@ -29,7 +29,7 @@ include "components/header.php";
 <div class="container">
     <div class="row">
         <div class="col-md-8 my-2">
-            <h3>Question</h1>
+            <h3>Problem</h1>
                 <hr>
                 <div class="Container">
                     <h5 class="card-title"><?php echo $row['question_title']; ?></h5>
@@ -40,7 +40,7 @@ include "components/header.php";
                 <hr>
                 <br>
                 <br>
-                <h3>Answers</h3>
+                <h3>Solutions</h3>
                 <hr>
                 <div class="container">
                     <?php
@@ -73,10 +73,10 @@ include "components/header.php";
             <div class="container">
                 <form action="questionDetail.php?question_id=<?php echo $question_id; ?>" method="post" enctype="multipart/form-data">
                     <div class=" justify-content-center m-3">
-                        <h4>Answer the Question</h4>
+                        <h4>Solve the problem</h4>
                         <hr>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="answer_details" rows="5" cols="50"></textarea>
-                        <label for="question_file" class="form-label">Upload an answer file</label>
+                        <label for="question_file" class="form-label">Upload an solution file</label>
                         <input class="form-control" type="file" id="answer_file" name="answer_file">
                         <input type="submit" value="post" name="post" class="btn my-2" style="width:130px; height:40px; background-color: #15252B; border-radius: 15px; color:white;">
 
