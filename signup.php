@@ -70,8 +70,8 @@ if (isset($_POST['signup'])) {
       <img src="img/canteen.jpg" alt="" class="limg" />
     </div>
     <div class="right">
-      <h1 style="margin-left: 48%; color: white;margin-top: 15px">Sign Up</h1>
-      <hr />
+      <h1 style="margin-left: 40%;margin-top: 15px">Sign Up</h1>
+      <hr>
       <form action="signup.php" method="post" enctype="multipart/form-data">
         <table>
           <tr>
@@ -115,7 +115,7 @@ if (isset($_POST['signup'])) {
             </td>
           </tr>
           <tr>
-            <td>
+            <td> <label for="">Choose picture </label>
               <input type="file" id="img" name="profileImg" accept="image/*" class="imgin">
             </td>
           </tr>
@@ -132,3 +132,13 @@ if (isset($_POST['signup'])) {
 </body>
 
 </html>
+<footer style="
+            text-align: center;
+            padding: 5px;
+            background-color: #15252B;
+            color: white;
+        ">
+        <p style="text-align: center; color: white;"><b>UIU Helpline</b></p>
+        <p style="text-align: center; color: white;">www.uiuhelpline.com</p>
+        <p style="text-align: center; color: white;">© ALL RIGHTS RESERVE BY TEAM VOID</p>
+    </footer>
