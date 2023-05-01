@@ -28,10 +28,10 @@
             <form class="" method="GET" action="search.php">
                 <div class="row">
                     <div class="col-10">
-                        <input class="form-control me-2" type="search" name="search_key" placeholder="Search" aria-label="Search" style="background: transparent; color:white; margin-top: 20px; width: 45%; margin-left: 35%;">
+                        <input class="form-control me-2" type="search" name="search_key" placeholder="Search" aria-label="Search" style="background: transparent; color:white; margin-top: 20px; width: 45%; margin-left: 35%; border-radius:20px">
                     </div>
                     <div class="col-2">
-                        <button class="btn btn-info" name="search" type="submit" style="margin-top: 20px; margin-left:-590px">Search</button>
+                        <button class="btn btn-info" name="search" type="submit" style="margin-top: 20px; margin-left:-500px">Search</button>
                     </div>
                 </div>
 
