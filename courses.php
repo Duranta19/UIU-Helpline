@@ -51,7 +51,7 @@ include('components/header.php');
             $dl = mysqli_fetch_assoc($result5);
         ?>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card my-1">
                     <img src="img/<?php echo $row['img']; ?>" style="height: 150px;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['course_title']; ?></h5>

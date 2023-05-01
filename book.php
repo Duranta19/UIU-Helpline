@@ -45,7 +45,7 @@ if (isset($_GET['search_key'])) {
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="col-md m-2">
-                <div class="card ">
+                <div class="card " style="height: 350px;">
                     <img src="<?php echo "img/" . $row['b_img'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="img/<?php echo $row['b_pdf']; ?>" target="_blank"> <b><?php echo $row['b_title'] ?> </b></a>
