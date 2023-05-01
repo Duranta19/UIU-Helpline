@@ -14,6 +14,9 @@ else if($type == 'course'){
 else if ($type == 'book'){
     header('Location: book.php?search_key=' .$key .'&search=');
 }
+else if ($type == 'questions'){
+    header('Location: questionBank1.php?search_key=' .$key .'&search=');
+}
 else{
     header('Location: dashboard.php');
 }

@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
   $data = mysqli_fetch_assoc($result);
 
   if ($numRows == 1) {
-      if ($pass == $data['password']) {
+      if (strcmp($pass,$data['password'])) {
         $login = true;
         session_start();
         $_SESSION['username'] = $data['name'];

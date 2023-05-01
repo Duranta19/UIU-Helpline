@@ -48,6 +48,10 @@
                     <input class="form-check-input" type="radio" name="select_type" id="inlineRadio3" value="book" required>
                     <label class="form-check-label" for="inlineRadio3">Books</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="select_type" id="inlineRadio3" value="questions" required>
+                    <label class="form-check-label" for="inlineRadio3">Questions</label>
+                </div>
 
 
 
