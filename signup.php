@@ -57,7 +57,7 @@ if (isset($_POST['signup'])) {
   ?>
 
   <div class="cover">
-    <img src="img/uiu logo.png" alt="" />
+  <a href="index.php"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/1200px-United_International_University_Monogram.svg.png" alt=""></a>
     <h1>UIU Helpline</h1>
     <br />
     <p>

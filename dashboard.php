@@ -13,7 +13,7 @@
 <body>
 
     <div class="cover">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/1200px-United_International_University_Monogram.svg.png" alt="">
+        <a href="dashboard.php"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/United_International_University_Monogram.svg/1200px-United_International_University_Monogram.svg.png" alt=""></a>
         <div class="logoutBtn">
             <!-- <input type="text" placeholder="Search"> -->
             <a class="btn btn-outline-danger" href="logout.php" style="color:white;">Logout</a>

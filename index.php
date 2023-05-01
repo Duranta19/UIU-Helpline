@@ -9,7 +9,7 @@ if (isset($_POST['login'])) {
   echo $pass;
   if ($username == "" or $pass == "") {
     $loginError = "Please Enter username and password";
-    header('Location: login.php');
+    header('Location: index.php');
   }
 
   $sql2 = "SELECT * FROM `accounts` WHERE username like '$username'; ";
@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
   </div>
   <img src="img/m2.jpg" class="limg" alt="" />
   <div class="right">
-    <form action="login.php" method="post" style="position: relative;">
+    <form action="index.php" method="post" style="position: relative;">
       <h1 style="margin-left: 0%; margin-bottom: 10px"><u>Login</u></h1>
       <table>
         <tr>
