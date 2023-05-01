@@ -16,7 +16,7 @@ if (isset($_GET['search_key'])) {
     $key = $_GET['search_key'];
     // echo $key;
 
-    $sql3 = "SELECT * FROM `book_details` WHERE b_title LIKE '%$key%' ORDER BY u_date DESC";
+    $sql3 = "SELECT * FROM `book_details` WHERE b_title LIKE '%$key%' ORDER BY b_no DESC";
     $result3  = mysqli_query($conn,$sql3);
 }
 ?>
@@ -45,7 +45,7 @@ if (isset($_GET['search_key'])) {
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="col-md m-2">
-                <div class="card ">
+                <div class="card " style="height: 350px;">
                     <img src="<?php echo "img/" . $row['b_img'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="img/<?php echo $row['b_pdf']; ?>" target="_blank"> <b><?php echo $row['b_title'] ?> </b></a>
